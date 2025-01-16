@@ -28,7 +28,7 @@ def register_user(driver, email):
     driver.find_element(*Locators.INPUT_EMAIL_R).send_keys(email)
     driver.find_element(*Locators.INPUT_PASSWORD).send_keys("qwerty123")
     driver.find_element(*Locators.BUTTON_TO_REGISTER).click()
-    WebDriverWait(driver, 3).until(EC.visibility_of_element_located((By.XPATH, "//h2[text()='Вход']")))
+    WebDriverWait(driver, 3).until(EC.visibility_of_element_located((Locators.WORD_LOGIN)))
     return email
 
 @pytest.fixture(scope="function")
